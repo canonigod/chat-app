@@ -6,7 +6,7 @@ You may use either `js` or `ts` (boilerplate found in the corresponding director
 
 ## The challenge
 
-Assuming you use the boilerplate, there is a substantial amount of the work already done, but it still needs some love. Using [these mockups](https://guildeducation.invisionapp.com/console/share/CS2E6IHBPR) (if you're not familar with InVision, check out [this video](https://www.youtube.com/watch?v=TPwq3iYMzm4&ab_channel=InVision)), please make any necessary changes to get the app looking more like what the design team had in mind.
+Assuming you use the boilerplate, there is a substantial amount of the work already done, but it still needs some love. Using [these mockups](https://guildeducation.invisionapp.com/console/Chat-App-ckmwji7i91mxy0139fc3kg31z/ckr40qrex002w0172a7sn2xb8/play), please make any necessary changes to get the app looking more like what the design team had in mind.
 
 ### What we are looking for:
 

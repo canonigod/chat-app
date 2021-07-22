@@ -23,7 +23,7 @@ To start the boilerplate(s) run either `yarn ts` or `yarn js` from the root of t
 
 ## Deliverying your code
 
-Please send a .zip file with your entire project to your recruiting coordinator at Guild.
+Please send a .zip file with your entire project to your recruiting coordinator at Guild (don't forget to delete the `node_modules` to reduce file size).
 
 ## Reviewers
 

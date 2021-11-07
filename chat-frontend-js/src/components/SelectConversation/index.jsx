@@ -4,6 +4,12 @@ import { AppContext } from '../../App/context';
 import { SocketContext } from '../../socket/context';
 import { useFilteredUsers } from '../../utils/useFilteredUsers';
 
+import styles from './index.module.scss';
+
+
+
+
+
 export const SelectConversation = () => {
   const { socket } = useContext(SocketContext);
   const { currentUser } = useContext(AppContext);
@@ -20,34 +26,37 @@ export const SelectConversation = () => {
   };
 
   return (
-    <div>
-      <h2>
+    <div className={styles.newMessage}>
+      <h1>New message</h1>
+      <p>
         Select an existing conversation from the left or pick a new user here to
         start chatting
-      </h2>
+      </p>
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor="user">Choose a user:</label>
-        <select
-          defaultValue={'select-a-user'}
-          id="user"
-          name="user"
-          onChange={(e) => setSelectedUser(e.target.value)}
-          value={selectedUser}
-        >
-          <option disabled value="select-a-user">
-            Select a user
-          </option>
-          {users.map((u) => (
-            <option key={`user-select-option-${u.userId}`} value={u.userId}>
-              {u.username}
+        <label htmlFor="user">User:</label>
+        <div className={styles.newMessageOptions}>
+          <select
+            defaultValue={'select-a-user'}
+            id="user"
+            name="user"
+            onChange={(e) => setSelectedUser(e.target.value)}
+            value={selectedUser}
+          >
+            <option disabled value="select-a-user">
+              Select a user
             </option>
-          ))}
-        </select>
-        <input
-          disabled={!selectedUser}
-          type="submit"
-          value="Start conversation"
-        />
+            {users.map((u) => (
+              <option key={`user-select-option-${u.userId}`} value={u.userId}>
+                {u.username}
+              </option>
+            ))}
+          </select>
+          <input
+            disabled={!selectedUser}
+            type="submit"
+            value="Start conversation"
+          />
+        </div>
       </form>
     </div>
   );

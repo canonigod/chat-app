@@ -12,15 +12,18 @@ export const ChatViewMessage = (message) => {
     .split('at')[0]
     .trim();
 
+  const senderName = sender.username.split(' ').slice(0, -1).join(' ');
+  console.log(message);
+
   return (
     <div>
       <span className={styles.messageContainer}>
-        <p className={styles.senderName}>{sender?.username}</p>
+        <b><p className={styles.senderName}>{sender ? senderName : ''}</p></b>
         <p className={styles.sentAt}>
           {format(new Date(message.createdAt), 'h:mm a ')} {relativeDay}
         </p>
       </span>
-      <p>{message.body}</p>
+      <p className={styles.messageText}>{message.body}</p>
     </div>
   );
 };

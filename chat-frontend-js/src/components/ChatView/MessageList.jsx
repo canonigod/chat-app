@@ -13,9 +13,11 @@ export const ChatViewMessageList = () => {
   const { messages } = useContext(AppContext);
 
   useEffect(() => {
-    socket.emit('getConversationMessages', { conversationId });
+    if(socket){
+      socket.emit('getConversationMessages', { conversationId });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [socket]);
 
   const filteredMessages = messages.filter(
     (m) => m.conversationId === conversationId

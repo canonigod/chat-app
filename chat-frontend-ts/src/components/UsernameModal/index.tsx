@@ -44,9 +44,13 @@ export const UsernameModal: React.FC = () => {
       aria-label="Username input"
       isOpen={Boolean(parsedParams.isEditingName) || false}
       onDismiss={() => history.push(`${pathname}`)}
+      className={styles.roundedBorder}
     >
       <form className={styles.formControl} onSubmit={handleSubmit}>
         <label htmlFor="username">Edit your name</label>
+        <p>Edit how your name displays when others chat with you.</p>
+
+        <label htmlFor="username">Name</label>
         <input
           aria-label="Edit your name"
           type="text"
@@ -56,7 +60,10 @@ export const UsernameModal: React.FC = () => {
           value={currentUser?.username || ''}
           placeholder="Enter your name"
         />
-        <input type="submit" value="submit" />
+        <div className={styles.formFooter}>
+          <button>Cancel</button>
+          <input type="submit" value="Save" />
+        </div>
       </form>
     </Dialog>
   );

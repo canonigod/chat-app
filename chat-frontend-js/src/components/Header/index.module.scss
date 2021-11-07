@@ -4,12 +4,15 @@
   display: flex;
   justify-content: space-between;
   height: 80px;
+  padding: 0 80px;
+
+  & .logo {
+    width: 80px;
+  }
+  
+  & .username {
+    cursor: pointer;
+  }
+
 }
 
-.logo {
-  width: 80px;
-}
-
-.username {
-  cursor: pointer;
-}

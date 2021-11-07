@@ -16,5 +16,9 @@
     "js": "concurrently \"cd chat-frontend-js && yarn && yarn start\" \"cd chat-backend && yarn && yarn develop\"",
     "ts": "concurrently \"cd chat-frontend-ts && yarn && yarn start\" \"cd chat-backend && yarn && yarn develop\""
   },
-  "version": "1.0.2"
+  "version": "1.0.2",
+  "dependencies": {
+    "@material-ui/icons": "^4.11.2",
+    "@mui/material": "^5.0.6"
+  }
 }

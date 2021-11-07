@@ -1,8 +1,28 @@
-.button {
-  background-color: #ffffff;
-  border-radius: 4px;
-  background-color: #ffffff;
-  border-style: none;
-  color: #007d8c;
-  padding: 14px 24px;
+.textDecorationNone{
+  text-decoration: none;
+
+  & .newMessageBtn{
+    @media screen and (max-width:1024px) {
+      padding: 0 10px;      
+    }
+    & .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 4px;
+      background-color: #ffffff;
+      border-style: none;
+      color: #007d8c;
+      padding: 14px 24px;
+      letter-spacing: 1px;
+      font-size: 1em;
+      cursor: pointer;
+
+      & .pencilIcon {
+        font-size: 1.2em;
+        margin-left: 5px;
+      }
+    }
+  }
 }

@@ -1,3 +1,5 @@
+import CircleIcon from '@mui/icons-material/Circle';
+import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import { useContext } from 'react';
 import { useParams } from 'react-router';
 
@@ -38,8 +40,11 @@ export const ChatViewHeader = () => {
 
   return (
     <div className={styles.header}>
-      <p>{viewedUser.username}</p>
-      <p>{viewedUser.socketId ? 'online' : 'offline'}</p>
+      <h2 className={styles.marginBottom0}>{viewedUser.username}</h2>
+      <p className={styles.marginTop0}>
+        {viewedUser.socketId ? <CircleIcon className={styles.onlineCircle}></CircleIcon> : <CircleOutlinedIcon className={styles.offlineCircle}></CircleOutlinedIcon>}
+        {viewedUser.socketId ? <span className={styles.onlineTxt}>Online</span> : <span className={styles.offlineTxt}>Offline</span> }
+      </p>
     </div>
   );
 };

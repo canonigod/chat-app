@@ -16,6 +16,7 @@ export const Header = () => {
         <img
           className={styles.logo}
           src="https://recess-images.imgix.net/guild_logos/guild/guild_color.svg"
+          alt="Guild Education Logo"
         />
       </Link>
       <span

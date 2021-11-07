@@ -106,6 +106,11 @@ io.on("connection", (socket: Socket) => {
     }
   })
 
+  socket.on('join room', (roomName, cb) => {
+    socket.join(roomName);
+    cb(messages[roomName]);
+  })
+
   
 });
 

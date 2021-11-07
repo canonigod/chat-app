@@ -12,6 +12,11 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/material": "^5.0.6",
     "@reach/dialog": "^0.15.0",
     "classnames": "^2.3.1",
     "date-fns": "^2.21.2",

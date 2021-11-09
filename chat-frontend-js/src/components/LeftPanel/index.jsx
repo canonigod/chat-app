@@ -17,30 +17,29 @@ export const LeftPanel = () => {
       <div className={styles.leftPanelContainer}>
         <div className={styles.chatRooms}>
           <h2>Channels</h2>
-          <h2>Guild-All</h2>
-          <h2>Product-Team</h2>
+          <p>Guild-All</p>
+          <p>Product-Team</p>
         </div>
         <h2>Direct Messages</h2>
-        <ul>
-          {conversations.map((c) => {
-            const otherUser = filteredUsers.find((u) =>
-              c.userIds.includes(u.userId)
-            );
-            // null check to appease ts
-            if (!otherUser) {
-              return null;
-            }
-            return (
-              <ConversationListItem
-                conversationId={c.conversationId}
-                key={c.conversationId}
-                {...otherUser}
-              />
-            );
-          })}
-        </ul>
       </div>
-
+      <ul>
+        {conversations.map((c) => {
+          const otherUser = filteredUsers.find((u) =>
+            c.userIds.includes(u.userId)
+          );
+          // null check to appease ts
+          if (!otherUser) {
+            return null;
+          }
+          return (
+            <ConversationListItem
+              conversationId={c.conversationId}
+              key={c.conversationId}
+              {...otherUser}
+            />
+          );
+        })}
+      </ul>
     </div>
   );
 };

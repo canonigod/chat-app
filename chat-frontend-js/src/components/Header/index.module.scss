@@ -1,3 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+a, p, div, span, h1, h2, h3, h4, input, ul, li {
+  font-family: 'Nunito Sans', sans-serif !important;
+}
 .container {
   align-items: center;
   box-shadow: 0 1px 3px 0 rgba(89, 89, 89, 0.23);
@@ -6,10 +12,24 @@
   height: 80px;
   padding: 0 80px;
 
+  // @media screen and (min-width: 320px) {
+  //   width: 299vw;
+  // }
+
+  // @media screen and (min-width: 375px) {
+  //   width: 296vw;
+  // }
+
+  // @media screen and (min-width: 400px) {
+  //   width: 264vw;
+  // }
+
+  // width: calc(100% + 50%);
+
   & .logo {
     width: 80px;
   }
-  
+
   & .username {
     cursor: pointer;
   }

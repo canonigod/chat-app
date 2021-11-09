@@ -15,6 +15,10 @@ $gray: #686868;
   text-decoration: none;
   width: 100%;
 
+  @media screen and (min-width: 1300px){
+    padding: 0 0 0 72px;
+  }
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
@@ -30,6 +34,10 @@ $gray: #686868;
   &.active {
     background-color: rgba(255, 255, 255, 0.15);
     border-left-color: #ffffff;
+  }
+
+  & .typing {
+    margin-right: 5px;
   }
 
   & .onlineCircle {

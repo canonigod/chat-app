@@ -6,10 +6,6 @@ import { useFilteredUsers } from '../../utils/useFilteredUsers';
 
 import styles from './index.module.scss';
 
-
-
-
-
 export const SelectConversation = () => {
   const { socket } = useContext(SocketContext);
   const { currentUser } = useContext(AppContext);
@@ -27,7 +23,7 @@ export const SelectConversation = () => {
 
   return (
     <div className={styles.newMessage}>
-      <h1>New message</h1>
+      <h1 className={styles.marginTop0}>New message</h1>
       <p>
         Select an existing conversation from the left or pick a new user here to
         start chatting

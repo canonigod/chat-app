@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
 $green: #3DAD0E;
 $gray: #686868;
+
+a, p, div, span, h1, h2, h3, h4, input, ul, li, button {
+  font-family: 'Nunito Sans', sans-serif !important;
+}
 
 .container {
   display: flex;
@@ -68,8 +74,20 @@ $gray: #686868;
 .input {
   border: 1px solid #303030;
   border-radius: 2px;
-  min-width: 788px;
+  // min-width: 788px;
+  min-width: 80%;
   padding-left: 12px;
+
+  @media screen and (max-width:1200px) {
+    &::placeholder{
+      font-size: 0.85em;
+    }
+  }
+  @media screen and (min-width:1201px) {
+    &::placeholder{
+      font-size: 1em;
+    }
+  }
 }
 
 .messageContainer {
@@ -96,6 +114,7 @@ $gray: #686868;
 .messageText{
   color:$gray;
   margin: 8px 0 0 0;
+  margin-bottom: 24px;
 }
 
 .messageList {
@@ -107,6 +126,7 @@ $gray: #686868;
   justify-content: flex-end;
   padding-left: 40px;
   margin-top: auto;
+  overflow: scroll;
 }
 
 .submit {

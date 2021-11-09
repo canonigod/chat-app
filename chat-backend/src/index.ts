@@ -85,6 +85,14 @@ io.on("connection", (socket: Socket) => {
     }
   })
 
+  socket.on('userStartedTyping', (conversationId, data) => {
+    const conversation = conversations.find(c => c.conversationId === conversationId);
+    const recipient = users.find(u => conversation?.userIds.includes(u.userId) && u.userId !== userId)
+    if (recipient?.socketId) {
+        io.to(recipient.socketId).emit('userTyping', data);
+    }
+  });
+
   socket.on('getConversations', ({ userId }) => {
     socket.emit('conversations', conversations.filter(c => c.userIds.includes(userId)))
   })
@@ -106,12 +114,6 @@ io.on("connection", (socket: Socket) => {
     }
   })
 
-  socket.on('join room', (roomName, cb) => {
-    socket.join(roomName);
-    cb(messages[roomName]);
-  })
-
-  
 });
 
 const port = process.env.PORT || 3001

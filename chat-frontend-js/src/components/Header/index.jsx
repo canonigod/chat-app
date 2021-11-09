@@ -23,6 +23,7 @@ export const Header = () => {
         className={styles.username}
         onClick={() => history.push(`${pathname}?isEditingName=true`)}
         role="button"
+        data-testid="header-btn"
       >
         <p>{currentUser ? currentUser.username : 'Pick a username'}</p>
       </span>

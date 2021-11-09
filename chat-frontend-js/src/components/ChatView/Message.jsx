@@ -13,7 +13,6 @@ export const ChatViewMessage = (message) => {
     .trim();
 
   const senderName = sender.username.split(' ').slice(0, -1).join(' ');
-  console.log(message);
 
   return (
     <div>

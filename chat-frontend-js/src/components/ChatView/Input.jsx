@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
 import { AppContext } from '../../App/context';
@@ -12,8 +12,9 @@ export const ChatViewInput = () => {
   const { conversationId } = useParams();
   const [message, setMessage] = useState('');
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setMessage(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +26,14 @@ export const ChatViewInput = () => {
 
     setMessage('');
   };
+
+  useEffect(() => {
+    if(message === ''){
+      socket?.emit('userStartedTyping', conversationId, false);
+    }else{
+      socket?.emit('userStartedTyping', conversationId, true);
+    }
+  }, [message, socket, conversationId]);
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>

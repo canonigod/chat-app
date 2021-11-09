@@ -27,6 +27,7 @@ export const UsernameModal= () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if(saveChanges){
       if (currentUser?.userId) {
         setCurrentUser({
@@ -49,7 +50,6 @@ export const UsernameModal= () => {
     setSaveChanges(false);
     setNewUserName('');
     history.push(`${pathname}`);
-    console.log(localStorage.username);
     localStorage.setItem('username', localStorage.username);
   };
 
@@ -66,7 +66,7 @@ export const UsernameModal= () => {
             <label htmlFor="username">Edit your name</label>
             <p>Edit how your name displays when others chat with you.</p>
           </div>
-          <CloseIcon onClick={closeModal} className={styles.mousePointer} role="button">close</CloseIcon>
+          <CloseIcon onClick={closeModal} className={styles.mousePointer} role="button" >close</CloseIcon>
         </div>
         <input
           aria-label="Edit your name"
@@ -76,6 +76,7 @@ export const UsernameModal= () => {
           onChange={handleChange}
           value={newUserName === '' && currentUser ? currentUser.username : newUserName}
           placeholder="Enter your name"
+          data-testid="edit-name-input"
         />
         <div className={styles.formFooter}>
           <button onClick={closeModal}>Cancel</button>
